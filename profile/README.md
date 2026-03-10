@@ -31,12 +31,12 @@ SVP introduces **Layered Compilation**—a classic software engineering approach
 
 ```
 Prompt/Requirements ─→ Blueprint/Intent ─→ Logic Chain/Architecture ─→ Logic Blocks ─→ Code Blocks/cpp ─→ Code/asm
-          ↑  Human-readable  Human-readable  Human-readable  Auditable   Derived artifacts
-          └────────── Human Input Layer ──────────────────────────┘
-                              ↓
-                         AI is the "Compiler"
-                              ↓
-                    One-way generation, no reverse modification
+                        ↑  Human-readable      Human-readable         Human-readable       Auditable    Derived artifacts
+                        └────────── Human Input Layer ──────────────────────────────┘
+                                         ↓
+                               AI is the "Compiler"
+                                         ↓
+                     One-way generation, no reverse modification
 ```
 
 **Core Principle**: Upper layers are the **source of truth**; lower layers are **derived artifacts**. When you need to make changes, edit the upper IR and recompile—don't directly modify the generated code.
@@ -55,14 +55,14 @@ SVP transforms software engineering from "writing code directly" to "designing a
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                      Human Editing Layer (Source of Truth)              │
 ├─────────────────────────────────────────────────────────────────────────┤
-│  L5: Blueprint    │  Intent documents (why)                               │
-│  L4: Logic Chain  │  Program flowcharts/architecture diagrams (what)      │
-│  L3: Logic Block  │  Pseudocode/contracts (how)                           │
+│  L5: Blueprint    │  Intent documents (why)                             │
+│  L4: Logic Chain  │  Program flowcharts/architecture diagrams (what)    │
+│  L3: Logic Block  │  Pseudocode/contracts (how)                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                        SVP Compilation Pipeline (One-way)               │
 ├─────────────────────────────────────────────────────────────────────────┤
-│  L2: Code Block   │  AI-generated code templates (impl skeleton)          │
-│  L1: Code         │  Actual runnable code (full implementation)           │
+│  L2: Code Block   │  AI-generated code templates (impl skeleton)        │
+│  L1: Code         │  Actual runnable code (full implementation)         │
 └─────────────────────────────────────────────────────────────────────────┘
 
 Principles:

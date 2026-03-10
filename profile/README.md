@@ -4,9 +4,42 @@
 
 ---
 
+<div align="center">
+
+**[English](./README_EN.md) | [日本語](./README_JP.md) | 中文**
+
+</div>
+
+---
+
+## Why SVP?
+
+Current AI coding tools (Cursor, Claude Code, GitHub Copilot) operate at the **text/code level**, leading to:
+
+- **Context overflow**: AI chokes on large codebases  
+- **Destructive edits**: AI "fixes" break working human logic  
+- **Architecture drift**: No semantic guardrails for system structure  
+- **Review nightmare**: Humans must audit thousands of lines of generated code
+
+**The root cause**: AI is working at the wrong abstraction layer.
+
+> Just as humans don't write machine code, AI shouldn't directly manipulate source code.
+
+SVP introduces **Layered Compilation**—a classic software engineering approach adapted for the AI age:
+
+```
+Intent (L5) → Architecture (L4) → Logic (L3) → Skeleton (L2) → Code (L1)
+     ↑                                                            ↓
+  Humans design                                               AI compiles
+```
+
+**Core principle**: The upper layers are the **source of truth**; lower layers are **derived artifacts**. When you need to change something, edit the upper layers and recompile—not the generated code.
+
+---
+
 ## 🎯 核心理念
 
-> 就像我们人类写程序时不管机器码一样，AI 不应该直接操作代码。
+### 分层编译模型
 
 SVP 将软件工程从"直接写代码"转变为"在抽象层设计，由 AI 编译实现"：
 

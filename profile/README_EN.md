@@ -1,0 +1,145 @@
+# Semantic Voxel Protocol (SVP)
+
+**Cognitive Infrastructure for AI-Human Collaborative Programming**
+
+---
+
+<div align="center">
+
+**English | [日本語](./README_JP.md) | [中文](./README.md)**
+
+</div>
+
+---
+
+## Why SVP?
+
+Current AI coding tools (Cursor, Claude Code, GitHub Copilot) operate at the **text/code level**, leading to:
+
+- **Context overflow**: AI chokes on large codebases, unable to maintain coherent understanding across thousands of files
+- **Destructive edits**: AI "fixes" often break carefully crafted human logic, introducing subtle bugs
+- **Architecture drift**: No semantic guardrails—system structure gradually erodes into spaghetti code
+- **Review nightmare**: Humans must audit thousands of lines of generated code, defeating the purpose of AI assistance
+
+**The root cause**: AI is working at the wrong abstraction layer. It's like trying to understand a novel by analyzing individual ink molecules.
+
+> Just as humans don't write machine code, AI shouldn't directly manipulate source code.
+
+SVP introduces **Layered Compilation**—a classic software engineering approach adapted for the AI age:
+
+```
+Intent (L5) → Architecture (L4) → Logic (L3) → Skeleton (L2) → Code (L1)
+     ↑                                                            ↓
+  Humans design                                               AI compiles
+```
+
+**Core principle**: The upper layers are the **source of truth**; lower layers are **derived artifacts**. When you need to change something, edit the upper layers and recompile—not the generated code. This mirrors how we treat compiled binaries: you don't patch the binary, you modify the source and rebuild.
+
+---
+
+## 🎯 Core Philosophy
+
+### The Layered Compilation Model
+
+SVP transforms software engineering from "writing code directly" to "designing at abstraction layers, compiled by AI":
+
+```
+Intent (L5) → Architecture (L4) → Logic (L3) → Skeleton (L2) → Implementation (L1)
+     ↑                                                                       ↓
+  Humans design                                                          AI compiles
+```
+
+**Key Principles**:
+- Humans edit only **L5-L3** (Intent, Architecture, Logic)
+- AI compiles **L3 → L1** (Runnable code)
+- **Recompile over modify** — Changes in upper layers trigger regeneration of lower layers
+
+---
+
+## 📦 Core Repositories
+
+| Repository | Description | Status |
+|------------|-------------|--------|
+| [`design`](https://github.com/SemanticVoxelProtocol/design) | Architecture design documents | 📝 In Progress |
+| [`svp-spec`](https://github.com/SemanticVoxelProtocol/svp-spec) | Protocol specification (IR definitions) | 📝 In Progress |
+| [`svp-ir`](https://github.com/SemanticVoxelProtocol/svp-ir) | TypeScript type definitions | 📝 In Progress |
+| [`svp-core`](https://github.com/SemanticVoxelProtocol/svp-core) | Core compilation engine | 📝 In Progress |
+| [`svp-cli`](https://github.com/SemanticVoxelProtocol/svp-cli) | Command-line interface | 📝 In Progress |
+| [`svp-mcp`](https://github.com/SemanticVoxelProtocol/svp-mcp) | MCP Server (AI integration) | 📝 In Progress |
+| [`template-ts`](https://github.com/SemanticVoxelProtocol/template-ts) | TypeScript project template | 📝 In Progress |
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Install CLI
+npm install -g @semanticvoxelprotocol/cli
+
+# 2. Create a project
+mkdir my-project && cd my-project
+svp init
+
+# 3. Define your intent
+vim blueprint.svp.yaml
+
+# 4. Compile (using AI)
+svp compile --level 5 --ai
+svp compile --level 4 --ai
+svp compile --level 3 --ai
+svp build
+
+# 5. Run
+npm run build
+npm start
+```
+
+---
+
+## 🏗️ Five-Layer Architecture
+
+| Layer | Name | Edited By | Content |
+|-------|------|-----------|---------|
+| **L5** | Blueprint | Humans | Project intent, domain boundaries, constraints |
+| **L4** | Logic Chain | Human-reviewed | Business processes, module interfaces |
+| **L3** | Logic Block | Human-reviewed | Pseudocode, contracts, algorithms |
+| **L2** | Code Block | AI-generated | Code skeletons, placeholders |
+| **L1** | Code | AI-generated | Full runnable code |
+
+**The Golden Rule**: Edit L3 → Recompile → New code. **Never directly modify L1.**
+
+---
+
+## 🤝 Contributing
+
+We're building the future of AI-Human collaboration. Join us if you:
+
+- Believe in "intent-based programming"
+- Want AI to work at the right abstraction level
+- Are interested in layered compilation models
+
+### How to Participate
+
+1. **Discuss Design** → Open an issue in the `design` repository
+2. **Contribute Code** → Look for tasks labeled `good-first-issue`
+3. **Share Ideas** → Join [Discussions](https://github.com/orgs/SemanticVoxelProtocol/discussions)
+
+---
+
+## 📖 Learn More
+
+- [Design Philosophy](https://github.com/SemanticVoxelProtocol/design/blob/main/01_Philosophy.md) — Why SVP is needed
+- [Architecture Design](https://github.com/SemanticVoxelProtocol/design/blob/main/02_Architecture.md) — Five-layer architecture details
+- [MVP Roadmap](https://github.com/SemanticVoxelProtocol/design/blob/main/03_MVP.md) — Implementation planning
+
+---
+
+## 🔮 Vision
+
+> **Make AI a compiler, not an editor.**
+
+Humans define problems, design architecture, and establish contracts. AI compiles designs into code.
+
+---
+
+*Semantic Voxel Protocol — Redefining software engineering for the AI era*

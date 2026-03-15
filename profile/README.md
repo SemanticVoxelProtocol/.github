@@ -13,6 +13,10 @@
 </div>
 
 ---
+## What is SVP?
+SVP (Semantic Voxel Protocol) is an intent‑driven software compilation paradigm designed for the AI era—a design philosophy that reshapes the boundary of human–machine collaboration. SVP transforms discrete software designs into machine‑readable intermediate representations (IR) and establishes a rigorous five‑layer architecture (L5 Intent Layer → L4 Architecture Layer → L3 Logic Layer → L2 Skeleton Layer → L1 Implementation Layer) to ensure that developers’ intentions are faithfully executed.
+
+It emulates classical compiler principles, allowing only top‑down, unidirectional compilation and strictly prohibiting any bottom‑up modifications to synchronize higher layers. SVP is a foundational methodology for resisting systemic entropy.
 
 ## Why SVP?
 
